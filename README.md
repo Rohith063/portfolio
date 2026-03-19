@@ -1,2 +1,2 @@
 # portfolio
-This is myu portfolio (html based) 
+This is my (html based) Portfolio
