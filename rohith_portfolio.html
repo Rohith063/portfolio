@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Renuguntla Rohith | Data Analyst & ML Engineer</title>
+<meta name="description" content="Portfolio of Renuguntla Rohith — Data Analyst and ML Engineer from Hyderabad. Specializing in machine learning, graph algorithms, route optimization and data-driven web applications. Open to Data Analyst, ML Engineer and Data Scientist roles." />
+<meta name="keywords" content="Renuguntla Rohith, data analyst Hyderabad, machine learning engineer, AI engineer, Python developer, graph algorithms, Flask developer, data science portfolio, metro route optimization, Hyderabad, HMIT, Holy Mary Institute" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --ink: #0e0e10;
+  --ink2: #3a3a44;
+  --ink3: #7a7a8a;
+  --bg: #f5f4ef;
+  --bg2: #edecea;
+  --card: #ffffff;
+  --accent: #1a6ef5;
+  --accent2: #0b47c2;
+  --accent-pale: #e8effd;
+  --teal: #0d9e78;
+  --teal-pale: #e1f5ee;
+  --amber: #c97c10;
+  --amber-pale: #fef3dc;
+  --border: rgba(14,14,16,0.1);
+  --serif: 'DM Serif Display', Georgia, serif;
+  --sans: 'Outfit', system-ui, sans-serif;
+  --mono: 'DM Mono', monospace;
+  --r: 12px;
+  --r-lg: 20px;
+  --shadow: 0 2px 16px rgba(14,14,16,0.08);
+  --shadow-lg: 0 8px 40px rgba(14,14,16,0.12);
+}
+html { scroll-behavior: smooth; font-size: 16px; }
+body { font-family: var(--sans); background: var(--bg); color: var(--ink); line-height: 1.6; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 3rem;
+  background: rgba(245,244,239,0.88);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  transition: box-shadow 0.3s;
+}
+nav.scrolled { box-shadow: var(--shadow); }
+.nav-logo { font-family: var(--serif); font-size: 1.25rem; color: var(--ink); letter-spacing: -0.02em; }
+.nav-logo span { color: var(--accent); }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a {
+  font-size: 0.875rem; font-weight: 500; color: var(--ink2);
+  letter-spacing: 0.02em; text-transform: uppercase;
+  transition: color 0.2s; position: relative;
+}
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -2px; left: 0; right: 0;
+  height: 1.5px; background: var(--accent);
+  transform: scaleX(0); transform-origin: left; transition: transform 0.25s ease;
+}
+.nav-links a:hover { color: var(--accent); }
+.nav-links a:hover::after { transform: scaleX(1); }
+.nav-cta {
+  background: var(--ink); color: var(--bg) !important;
+  padding: 0.5rem 1.25rem; border-radius: 100px;
+  font-size: 0.875rem !important; font-weight: 500 !important;
+  transition: background 0.2s, transform 0.15s !important;
+}
+.nav-cta:hover { background: var(--accent) !important; transform: translateY(-1px); }
+.nav-cta::after { display: none !important; }
+
+/* HERO */
+#hero {
+  min-height: 100vh; display: flex; flex-direction: column;
+  justify-content: center; padding: 8rem 3rem 5rem;
+  position: relative; overflow: hidden;
+}
+.hero-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 4rem; align-items: center;
+  max-width: 1200px; margin: 0 auto; width: 100%;
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--accent-pale); color: var(--accent);
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; padding: 0.35rem 0.9rem;
+  border-radius: 100px; margin-bottom: 1.5rem; width: fit-content;
+}
+.hero-eyebrow::before {
+  content: ''; width: 6px; height: 6px;
+  background: var(--accent); border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.5);opacity:0.6} }
+.hero-title {
+  font-family: var(--serif);
+  font-size: clamp(2.6rem, 5vw, 4.2rem);
+  line-height: 1.05; letter-spacing: -0.02em;
+  color: var(--ink); margin-bottom: 1.5rem;
+}
+.hero-title em { color: var(--accent); font-style: italic; }
+.hero-sub { font-size: 1.05rem; color: var(--ink2); line-height: 1.7; max-width: 480px; margin-bottom: 2.5rem; }
+.hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--ink); color: var(--bg);
+  padding: 0.75rem 2rem; border-radius: 100px;
+  font-size: 0.9rem; font-weight: 500; cursor: pointer;
+  transition: background 0.2s, transform 0.15s; display: inline-block;
+}
+.btn-primary:hover { background: var(--accent); transform: translateY(-2px); }
+.btn-outline {
+  border: 1.5px solid var(--border); color: var(--ink);
+  padding: 0.75rem 2rem; border-radius: 100px;
+  font-size: 0.9rem; font-weight: 500; cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, transform 0.15s;
+  display: inline-block; background: var(--card);
+}
+.btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+.hero-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 2.5rem;
+  box-shadow: var(--shadow-lg); position: relative;
+}
+.hero-card::before {
+  content: ''; position: absolute;
+  top: -1px; left: 40px; right: 40px; height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--teal));
+  border-radius: 0 0 4px 4px;
+}
+.hero-avatar {
+  width: 72px; height: 72px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--teal));
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif); font-size: 1.75rem; color: white;
+  margin-bottom: 1rem; letter-spacing: -0.02em;
+}
+.hero-card-name { font-family: var(--serif); font-size: 1.35rem; color: var(--ink); margin-bottom: 0.25rem; }
+.hero-card-role { font-size: 0.875rem; color: var(--ink3); margin-bottom: 1.5rem; }
+.hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+.stat-box { background: var(--bg); border-radius: var(--r); padding: 1rem; text-align: center; }
+.stat-num { font-family: var(--serif); font-size: 1.75rem; color: var(--ink); line-height: 1; margin-bottom: 0.25rem; }
+.stat-label { font-size: 0.78rem; color: var(--ink3); text-transform: uppercase; letter-spacing: 0.05em; }
+.hero-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.tag { font-family: var(--mono); font-size: 0.78rem; padding: 0.3rem 0.7rem; border-radius: 6px; border: 1px solid var(--border); color: var(--ink2); background: var(--bg); }
+.tag.blue { background: var(--accent-pale); color: var(--accent); border-color: transparent; }
+.tag.teal { background: var(--teal-pale); color: var(--teal); border-color: transparent; }
+.tag.amber { background: var(--amber-pale); color: var(--amber); border-color: transparent; }
+
+/* SECTIONS */
+section { padding: 6rem 3rem; position: relative; }
+.section-inner { max-width: 1200px; margin: 0 auto; }
+.section-label {
+  display: flex; align-items: center; gap: 0.75rem;
+  font-family: var(--mono); font-size: 0.78rem;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 1rem;
+}
+.section-label::before { content: ''; width: 28px; height: 1.5px; background: var(--accent); display: inline-block; }
+.section-title { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 1rem; }
+.section-sub { font-size: 1.05rem; color: var(--ink2); max-width: 560px; line-height: 1.7; margin-bottom: 3.5rem; }
+
+/* ABOUT */
+#about { background: var(--card); }
+.about-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 5rem; align-items: start; }
+.about-text p { font-size: 1.05rem; color: var(--ink2); line-height: 1.8; margin-bottom: 1.25rem; }
+.about-text p strong { color: var(--ink); font-weight: 600; }
+.about-highlights { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 2rem; }
+.highlight-item {
+  display: flex; align-items: flex-start; gap: 1rem;
+  padding: 1rem 1.25rem; background: var(--bg);
+  border-radius: var(--r); border-left: 3px solid var(--accent);
+}
+.highlight-icon { font-size: 1.25rem; line-height: 1; margin-top: 2px; flex-shrink: 0; }
+.highlight-text h4 { font-size: 0.9rem; font-weight: 600; color: var(--ink); margin-bottom: 0.25rem; }
+.highlight-text p { font-size: 0.85rem; color: var(--ink3); line-height: 1.5; margin: 0; }
+
+/* SKILLS */
+#skills { background: var(--bg); }
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+.skill-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 1.75rem;
+  box-shadow: var(--shadow); transition: transform 0.2s, box-shadow 0.2s;
+}
+.skill-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.skill-card-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem; }
+.skill-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+.skill-icon.blue { background: var(--accent-pale); }
+.skill-icon.teal { background: var(--teal-pale); }
+.skill-icon.amber { background: var(--amber-pale); }
+.skill-icon.purple { background: #f0eefe; }
+.skill-card-title { font-size: 0.95rem; font-weight: 600; color: var(--ink); }
+.skill-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.skill-pill { font-family: var(--mono); font-size: 0.775rem; padding: 0.3rem 0.65rem; border-radius: 6px; background: var(--bg); color: var(--ink2); border: 1px solid var(--border); }
+
+/* PROJECTS */
+#projects { background: var(--card); }
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2rem; }
+.project-card {
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: var(--r-lg); overflow: hidden;
+  transition: transform 0.25s, box-shadow 0.25s;
+  display: flex; flex-direction: column; cursor: pointer;
+}
+.project-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+.project-card-banner {
+  height: 180px; display: flex; align-items: center;
+  justify-content: center; font-size: 3rem;
+  position: relative; overflow: hidden;
+}
+.banner-blue { background: linear-gradient(135deg,#e8effd 0%,#c5d9fb 100%); }
+.banner-teal { background: linear-gradient(135deg,#e1f5ee 0%,#9fe1cb 100%); }
+.banner-amber { background: linear-gradient(135deg,#fef3dc 0%,#fad196 100%); }
+.banner-purple { background: linear-gradient(135deg,#f0eefe 0%,#d2cafc 100%); }
+.project-card-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+.project-badge {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-family: var(--mono); font-size: 0.72rem;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 0.25rem 0.6rem; border-radius: 100px;
+  margin-bottom: 0.75rem; width: fit-content;
+}
+.badge-blue { background: var(--accent-pale); color: var(--accent); }
+.badge-teal { background: var(--teal-pale); color: var(--teal); }
+.badge-amber { background: var(--amber-pale); color: var(--amber); }
+.badge-purple { background: #f0eefe; color: #534ab7; }
+.project-title { font-family: var(--serif); font-size: 1.2rem; color: var(--ink); margin-bottom: 0.5rem; line-height: 1.25; }
+.project-problem { font-size: 0.875rem; color: var(--ink2); line-height: 1.6; margin-bottom: 1rem; flex: 1; }
+.project-impact {
+  display: flex; align-items: flex-start; gap: 0.5rem;
+  padding: 0.75rem 1rem; background: var(--card);
+  border-radius: var(--r); border: 1px solid var(--border); margin-bottom: 1rem;
+}
+.impact-icon { font-size: 0.9rem; margin-top: 1px; flex-shrink: 0; }
+.impact-text { font-size: 0.83rem; color: var(--ink2); line-height: 1.5; }
+.impact-text strong { color: var(--ink); }
+.project-tools { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.25rem; }
+.project-links { display: flex; gap: 0.75rem; }
+.link-btn { font-size: 0.8rem; font-weight: 500; padding: 0.45rem 1rem; border-radius: 100px; cursor: pointer; transition: all 0.2s; }
+.link-btn.solid { background: var(--ink); color: var(--bg); }
+.link-btn.solid:hover { background: var(--accent); }
+.link-btn.ghost { border: 1.5px solid var(--border); color: var(--ink2); background: transparent; }
+.link-btn.ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+/* MODAL */
+.modal-overlay {
+  display: none; position: fixed; inset: 0;
+  background: rgba(10,10,12,0.6); backdrop-filter: blur(6px);
+  z-index: 200; align-items: center; justify-content: center; padding: 2rem;
+}
+.modal-overlay.open { display: flex; }
+.modal {
+  background: var(--card); border-radius: var(--r-lg);
+  max-width: 680px; width: 100%; max-height: 85vh;
+  overflow-y: auto; box-shadow: 0 24px 80px rgba(0,0,0,0.2);
+  padding: 2.5rem; position: relative;
+}
+.modal-close {
+  position: absolute; top: 1.25rem; right: 1.25rem;
+  width: 32px; height: 32px; border-radius: 50%;
+  border: 1px solid var(--border); background: var(--bg);
+  cursor: pointer; display: flex; align-items: center;
+  justify-content: center; font-size: 1rem; color: var(--ink3);
+  transition: background 0.2s;
+}
+.modal-close:hover { background: var(--bg2); }
+.modal-section { margin-bottom: 1.5rem; }
+.modal-section h4 { font-size: 0.78rem; font-family: var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink3); margin-bottom: 0.6rem; }
+.modal-section p { font-size: 0.95rem; color: var(--ink2); line-height: 1.7; }
+.modal-steps { list-style: none; padding: 0; }
+.modal-steps li { display: flex; gap: 1rem; padding: 0.75rem 0; border-bottom: 1px solid var(--border); font-size: 0.9rem; color: var(--ink2); line-height: 1.5; }
+.modal-steps li:last-child { border-bottom: none; }
+.step-num { width: 24px; height: 24px; border-radius: 50%; background: var(--accent-pale); color: var(--accent); font-size: 0.75rem; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+
+/* RESUME */
+#resume { background: var(--bg); }
+.resume-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+.resume-col h3 { font-family: var(--serif); font-size: 1.4rem; color: var(--ink); margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--accent); }
+.timeline { display: flex; flex-direction: column; }
+.tl-item { position: relative; padding: 0 0 2rem 2rem; }
+.tl-item::before { content: ''; position: absolute; left: 6px; top: 8px; bottom: 0; width: 1.5px; background: var(--border); }
+.tl-item:last-child::before { display: none; }
+.tl-dot { position: absolute; left: 0; top: 6px; width: 13px; height: 13px; border-radius: 50%; background: var(--accent); border: 2px solid var(--bg); box-shadow: 0 0 0 2px var(--accent); }
+.tl-date { font-family: var(--mono); font-size: 0.75rem; color: var(--ink3); margin-bottom: 0.25rem; }
+.tl-role { font-size: 0.95rem; font-weight: 600; color: var(--ink); margin-bottom: 0.15rem; }
+.tl-org { font-size: 0.85rem; color: var(--accent); margin-bottom: 0.5rem; }
+.tl-desc { font-size: 0.85rem; color: var(--ink2); line-height: 1.6; }
+.resume-download {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  margin-top: 2.5rem; background: var(--ink); color: var(--bg);
+  padding: 0.75rem 2rem; border-radius: 100px;
+  font-size: 0.9rem; font-weight: 500;
+  transition: background 0.2s, transform 0.15s;
+}
+.resume-download:hover { background: var(--accent); transform: translateY(-2px); }
+
+/* CONTACT */
+#contact { background: var(--ink); color: var(--bg); }
+#contact .section-label { color: var(--accent); }
+#contact .section-label::before { background: var(--accent); }
+#contact .section-title { color: var(--bg); }
+#contact .section-sub { color: rgba(245,244,239,0.6); }
+.contact-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 5rem; align-items: start; }
+.contact-form { display: flex; flex-direction: column; gap: 1rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-field { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-field label { font-size: 0.8rem; font-weight: 500; color: rgba(245,244,239,0.5); letter-spacing: 0.05em; text-transform: uppercase; }
+.form-field input, .form-field textarea {
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--r); padding: 0.75rem 1rem;
+  color: var(--bg); font-family: var(--sans); font-size: 0.9rem;
+  outline: none; transition: border-color 0.2s;
+}
+.form-field input:focus, .form-field textarea:focus { border-color: var(--accent); }
+.form-field input::placeholder, .form-field textarea::placeholder { color: rgba(245,244,239,0.25); }
+.form-field textarea { resize: vertical; min-height: 120px; }
+.submit-btn {
+  background: var(--accent); color: white; padding: 0.85rem 2rem;
+  border-radius: 100px; font-size: 0.9rem; font-weight: 500;
+  cursor: pointer; border: none; font-family: var(--sans);
+  transition: background 0.2s, transform 0.15s;
+  display: flex; align-items: center; gap: 0.5rem; width: fit-content;
+}
+.submit-btn:hover { background: var(--accent2); transform: translateY(-2px); }
+.contact-info { display: flex; flex-direction: column; gap: 1.75rem; }
+.contact-item { display: flex; align-items: flex-start; gap: 1rem; }
+.contact-item-icon {
+  width: 44px; height: 44px; border-radius: var(--r);
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem; flex-shrink: 0;
+}
+.contact-item-text h4 { font-size: 0.85rem; color: rgba(245,244,239,0.5); margin-bottom: 0.2rem; }
+.contact-item-text a, .contact-item-text p { font-size: 0.95rem; color: var(--bg); transition: color 0.2s; }
+.contact-item-text a:hover { color: var(--accent); }
+.social-links { display: flex; gap: 0.75rem; margin-top: 2rem; }
+.social-btn {
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.15);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.85rem; font-weight: 600;
+  transition: background 0.2s, border-color 0.2s; cursor: pointer;
+  color: rgba(245,244,239,0.7);
+}
+.social-btn:hover { background: rgba(255,255,255,0.1); border-color: var(--accent); color: white; }
+
+footer { background: #08080a; color: rgba(245,244,239,0.35); text-align: center; padding: 1.5rem; font-size: 0.8rem; }
+
+.fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 900px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+  section { padding: 4rem 1.5rem; }
+  #hero { padding: 6rem 1.5rem 4rem; }
+  .hero-grid, .about-grid, .resume-layout, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .form-row { grid-template-columns: 1fr; }
+  .projects-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-logo">Rohith<span>.</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#resume">Resume</a></li>
+    <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid">
+    <div class="hero-content">
+      <div class="hero-eyebrow">Open to Work — Data, ML &amp; AI Roles · Fully Flexible</div>
+      <h1 class="hero-title">
+        I build systems that<br/>turn data into <em>real answers</em>
+      </h1>
+      <p class="hero-sub">
+        I'm Rohith — a final-year CS student from Hyderabad who combines machine learning, graph algorithms and web development to solve problems that actually matter. From predicting metro fares to optimizing city routes, I build end-to-end.
+      </p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn-primary">See My Work</a>
+        <a href="#contact" class="btn-outline">Let's Connect</a>
+      </div>
+    </div>
+
+    <div class="hero-card fade-in">
+      <div class="hero-avatar">RR</div>
+      <div class="hero-card-name">Renuguntla Rohith</div>
+      <div class="hero-card-role">Data Analyst · ML Engineer · Flask Developer · Hyderabad</div>
+      <div class="hero-stats">
+        <div class="stat-box">
+          <div class="stat-num">2</div>
+          <div class="stat-label">Projects Built</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">ML</div>
+          <div class="stat-label">+ Graph Theory</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">3rd</div>
+          <div class="stat-label">Year @ HMIT</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">2027</div>
+          <div class="stat-label">Graduating</div>
+        </div>
+      </div>
+      <div class="hero-tags">
+        <span class="tag blue">Python</span>
+        <span class="tag blue">Scikit-learn</span>
+        <span class="tag teal">Flask</span>
+        <span class="tag teal">NetworkX</span>
+        <span class="tag amber">React</span>
+        <span class="tag amber">Matplotlib</span>
+        <span class="tag">Git</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-text fade-in">
+        <div class="section-label">About Me</div>
+        <h2 class="section-title">I got curious about how cities think</h2>
+        <p>
+          It started with a simple question — <strong>why does a metro route feel inefficient even when the map looks straightforward?</strong> That curiosity pulled me into graph theory, and graph theory pulled me into machine learning, and suddenly I was building a full prediction system for Hyderabad Metro Rail as a solo project in my 3rd year.
+        </p>
+        <p>
+          I'm a Computer Science student at <strong>Holy Mary Institute of Technology and Science</strong>, graduating in 2027 — but I don't wait for graduation to build real things. I combine <strong>ML models, algorithmic thinking and web development</strong> to ship complete, working solutions — not just notebooks.
+        </p>
+        <p>
+          I'm actively looking for <strong>Data Analyst, ML Engineer and Data Scientist</strong> opportunities where I can keep learning fast, contribute meaningfully, and grow alongside people who take their craft seriously.
+        </p>
+        <a href="#contact" class="btn-primary" style="margin-top:1rem;display:inline-block;">Work with me →</a>
+      </div>
+
+      <div class="about-highlights fade-in">
+        <div class="highlight-item">
+          <div class="highlight-icon">🧠</div>
+          <div class="highlight-text">
+            <h4>Algorithm-Driven Thinker</h4>
+            <p>I approach problems structurally — modelling a city's metro as a graph before I ever touch a dataset.</p>
+          </div>
+        </div>
+        <div class="highlight-item" style="border-left-color:var(--teal)">
+          <div class="highlight-icon">⚙️</div>
+          <div class="highlight-text">
+            <h4>End-to-End Builder</h4>
+            <p>From ML model training to Flask API to React frontend — I ship complete, working applications.</p>
+          </div>
+        </div>
+        <div class="highlight-item" style="border-left-color:var(--amber)">
+          <div class="highlight-icon">📊</div>
+          <div class="highlight-text">
+            <h4>Data Visualization First</h4>
+            <p>Results mean nothing if they can't be understood. Matplotlib, Tableau and Power BI are core to how I communicate findings.</p>
+          </div>
+        </div>
+        <div class="highlight-item" style="border-left-color:#7f77dd">
+          <div class="highlight-icon">🚀</div>
+          <div class="highlight-text">
+            <h4>Fast, Self-Directed Learner</h4>
+            <p>Solo-built a hybrid graph + ML system as a 3rd-year student. I pick up what I need and ship it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-label">Skills</div>
+    <h2 class="section-title">What I actually know</h2>
+    <p class="section-sub">Honest, categorized, and specific. No buzzword padding — just the tools I've genuinely used in projects.</p>
+    <div class="skills-grid fade-in">
+
+      <div class="skill-card">
+        <div class="skill-card-header">
+          <div class="skill-icon blue">🤖</div>
+          <div class="skill-card-title">Machine Learning</div>
+        </div>
+        <div class="skill-pills">
+          <span class="skill-pill">Python</span>
+          <span class="skill-pill">Scikit-learn</span>
+          <span class="skill-pill">Decision Tree</span>
+          <span class="skill-pill">Regression Models</span>
+          <span class="skill-pill">Feature Engineering</span>
+          <span class="skill-pill">Model Evaluation</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-header">
+          <div class="skill-icon teal">🔗</div>
+          <div class="skill-card-title">Algorithms &amp; Data Structures</div>
+        </div>
+        <div class="skill-pills">
+          <span class="skill-pill">NetworkX</span>
+          <span class="skill-pill">Dijkstra's Algorithm</span>
+          <span class="skill-pill">Graph Theory</span>
+          <span class="skill-pill">Route Optimization</span>
+          <span class="skill-pill">DSA (Python)</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-header">
+          <div class="skill-icon amber">📊</div>
+          <div class="skill-card-title">Data Analysis &amp; Visualization</div>
+        </div>
+        <div class="skill-pills">
+          <span class="skill-pill">Pandas</span>
+          <span class="skill-pill">NumPy</span>
+          <span class="skill-pill">Matplotlib</span>
+          <span class="skill-pill">Seaborn</span>
+          <span class="skill-pill">Tableau</span>
+          <span class="skill-pill">Power BI</span>
+          <span class="skill-pill">Excel</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-header">
+          <div class="skill-icon purple">🌐</div>
+          <div class="skill-card-title">Web Development</div>
+        </div>
+        <div class="skill-pills">
+          <span class="skill-pill">HTML / CSS</span>
+          <span class="skill-pill">JavaScript</span>
+          <span class="skill-pill">React</span>
+          <span class="skill-pill">Flask</span>
+          <span class="skill-pill">FastAPI</span>
+          <span class="skill-pill">REST APIs</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-header">
+          <div class="skill-icon blue">🛠️</div>
+          <div class="skill-card-title">Tools &amp; Dev Environment</div>
+        </div>
+        <div class="skill-pills">
+          <span class="skill-pill">Git / GitHub</span>
+          <span class="skill-pill">Jupyter Notebook</span>
+          <span class="skill-pill">VS Code</span>
+          <span class="skill-pill">Google Sheets</span>
+          <span class="skill-pill">Excel (Advanced)</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-header">
+          <div class="skill-icon teal">📚</div>
+          <div class="skill-card-title">Currently Exploring</div>
+        </div>
+        <div class="skill-pills">
+          <span class="skill-pill">Deep Learning</span>
+          <span class="skill-pill">SQL / PostgreSQL</span>
+          <span class="skill-pill">Docker (basics)</span>
+          <span class="skill-pill">LLM APIs</span>
+          <span class="skill-pill">Streamlit</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-inner">
+    <div class="section-label">Projects</div>
+    <h2 class="section-title">Things I've actually built</h2>
+    <p class="section-sub">Two real projects — one research-grade ML system, one human-centred web app. Click any card for the full case study.</p>
+
+    <div class="projects-grid fade-in">
+
+      <!-- Project 1: Metro -->
+      <div class="project-card" onclick="openModal('modal1')">
+        <div class="project-card-banner banner-blue">🚇</div>
+        <div class="project-card-body">
+          <span class="project-badge badge-blue">🤖 ML + Graph Theory · Research Project</span>
+          <h3 class="project-title">Hyderabad Metro Route Optimizer &amp; Fare Predictor</h3>
+          <p class="project-problem">Hyderabad Metro commuters often take suboptimal routes and can't predict fares accurately in advance. Can a hybrid system combining Dijkstra's graph algorithm with a Decision Tree ML model solve both problems at once?</p>
+          <div class="project-impact">
+            <span class="impact-icon">⚡</span>
+            <span class="impact-text"><strong>Optimized routes + accurate fare predictions</strong> — full Flask web app deployed, combining DSA and ML in a single end-to-end pipeline.</span>
+          </div>
+          <div class="project-tools">
+            <span class="tag blue">Python</span>
+            <span class="tag blue">Scikit-learn</span>
+            <span class="tag teal">NetworkX</span>
+            <span class="tag teal">Dijkstra's</span>
+            <span class="tag">Flask</span>
+            <span class="tag">Matplotlib</span>
+          </div>
+          <div class="project-links">
+            <span class="link-btn solid" onclick="event.stopPropagation();openModal('modal1')">Full Case Study</span>
+            <a href="https://github.com/Rohith063" target="_blank" class="link-btn ghost" onclick="event.stopPropagation()">GitHub →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2: 4Ever -->
+      <div class="project-card" onclick="openModal('modal2')">
+        <div class="project-card-banner banner-teal">💚</div>
+        <div class="project-card-body">
+          <span class="project-badge badge-teal">🌐 Web App · HTML/CSS/JS</span>
+          <h3 class="project-title">4Ever — Relationship Planning &amp; Budget Tracker</h3>
+          <p class="project-problem">Couples struggle to manage shared finances, plan their days together and track relationship milestones in one place. Built a dedicated personal web app that brings budgeting, scheduling and connection into a single interface for two people.</p>
+          <div class="project-impact">
+            <span class="impact-icon">⚡</span>
+            <span class="impact-text"><strong>Full working web app</strong> — shared budget planning, day-to-day scheduling and relationship tools, all in a clean HTML/CSS/JS build.</span>
+          </div>
+          <div class="project-tools">
+            <span class="tag teal">HTML</span>
+            <span class="tag teal">CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Responsive Design</span>
+            <span class="tag">Local Storage</span>
+          </div>
+          <div class="project-links">
+            <span class="link-btn solid" onclick="event.stopPropagation();openModal('modal2')">Full Case Study</span>
+            <a href="https://github.com/Rohith063" target="_blank" class="link-btn ghost" onclick="event.stopPropagation()">GitHub →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- More coming note -->
+    <div style="margin-top:2.5rem;padding:1.75rem 2rem;background:var(--bg);border:1px dashed rgba(14,14,16,0.15);border-radius:var(--r-lg);display:flex;align-items:center;gap:1rem;">
+      <span style="font-size:1.5rem">🔭</span>
+      <div>
+        <p style="font-weight:600;color:var(--ink);margin-bottom:0.25rem;">More projects in progress</p>
+        <p style="font-size:0.875rem;color:var(--ink3);">Currently exploring deep learning, SQL analytics dashboards and LLM-powered tools. Watch my <a href="https://github.com/Rohith063" target="_blank" style="color:var(--accent);text-decoration:underline">GitHub</a> for what's coming next.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESUME -->
+<section id="resume">
+  <div class="section-inner">
+    <div class="section-label">Resume</div>
+    <h2 class="section-title">Education &amp; Background</h2>
+    <p class="section-sub">A focused journey — 3rd year student, two real projects, and a clear direction in data and ML.</p>
+
+    <div class="resume-layout fade-in">
+      <div class="resume-col">
+        <h3>Education</h3>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-date">2023 – 2027 (Expected)</div>
+            <div class="tl-role">B.Tech in Computer Science &amp; Engineering</div>
+            <div class="tl-org">Holy Mary Institute of Technology and Science (HMIT), Hyderabad</div>
+            <div class="tl-desc">Currently in 3rd Year, 2nd Semester. Specializing in AI, ML and Data Science. Final year project: Hybrid Graph-Theoretic + ML Framework for Hyderabad Metro Optimization — solo-built end-to-end.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-date">2021 – 2023</div>
+            <div class="tl-role">Intermediate (MPC / Science Stream)</div>
+            <div class="tl-org">Hyderabad, Telangana</div>
+            <div class="tl-desc">Strong foundation in Mathematics and Sciences — the analytical base that feeds directly into my ML and algorithmic work today.</div>
+          </div>
+        </div>
+
+        <a href="#contact" class="resume-download">
+          ↓ Request My Resume
+        </a>
+      </div>
+
+      <div class="resume-col">
+        <h3>Projects &amp; Self-Learning</h3>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot" style="background:var(--teal);box-shadow:0 0 0 2px var(--teal)"></div>
+            <div class="tl-date">2024 – Present</div>
+            <div class="tl-role">Hyderabad Metro ML + Graph Research Project</div>
+            <div class="tl-org">Solo — Academic + Personal</div>
+            <div class="tl-desc">Built a complete hybrid framework combining Dijkstra's algorithm (route optimization) and Decision Tree Regressor (fare prediction), deployed as a Flask web application.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot" style="background:var(--teal);box-shadow:0 0 0 2px var(--teal)"></div>
+            <div class="tl-date">2024</div>
+            <div class="tl-role">4Ever — Relationship Web App</div>
+            <div class="tl-org">Solo — Personal Project</div>
+            <div class="tl-desc">Designed and built a full front-end web application with budget tracking, day planning and relationship scheduling features using HTML, CSS and JavaScript.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot" style="background:var(--teal);box-shadow:0 0 0 2px var(--teal)"></div>
+            <div class="tl-date">2023 – Present</div>
+            <div class="tl-role">Self-Directed ML &amp; Web Dev Learning</div>
+            <div class="tl-org">Python, Flask, React, Scikit-learn, Matplotlib</div>
+            <div class="tl-desc">Consistently building real projects over taking passive courses — Scikit-learn, NetworkX, Flask, React and data visualization are all self-taught through doing.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-label">Contact</div>
+    <h2 class="section-title">Let's talk about what you're building</h2>
+    <p class="section-sub">I'm actively seeking Data Analyst, ML Engineer and Data Scientist roles. Open to internships, full-time, remote and hybrid — anywhere.</p>
+
+    <div class="contact-grid">
+      <form class="contact-form fade-in" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-field">
+            <label>Your Name</label>
+            <input type="text" placeholder="Priya Reddy" required />
+          </div>
+          <div class="form-field">
+            <label>Company</label>
+            <input type="text" placeholder="TechCorp India" />
+          </div>
+        </div>
+        <div class="form-field">
+          <label>Email</label>
+          <input type="email" placeholder="priya@techcorp.in" required />
+        </div>
+        <div class="form-field">
+          <label>Your Message</label>
+          <textarea placeholder="Hi Rohith, we're looking for a data analyst / ML engineer to join our team and..."></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Message <span>→</span></button>
+      </form>
+
+      <div class="contact-info fade-in">
+        <div class="contact-item">
+          <div class="contact-item-icon">📧</div>
+          <div class="contact-item-text">
+            <h4>Email</h4>
+            <a href="mailto:renuguntlarohith@gmail.com">renuguntlarohith@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">📍</div>
+          <div class="contact-item-text">
+            <h4>Location</h4>
+            <p>Hyderabad, India · Fully Open to Remote</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">🎓</div>
+          <div class="contact-item-text">
+            <h4>Status</h4>
+            <p>Final Year Student — Available for Internships &amp; Entry-Level Roles</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">⚡</div>
+          <div class="contact-item-text">
+            <h4>Response Time</h4>
+            <p>Usually within 24 hours</p>
+          </div>
+        </div>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/renuguntla-rohith-82a781348" target="_blank" class="social-btn" title="LinkedIn">in</a>
+          <a href="https://github.com/Rohith063" target="_blank" class="social-btn" title="GitHub">gh</a>
+          <a href="mailto:renuguntlarohith@gmail.com" class="social-btn" title="Email">@</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Designed &amp; built with care · Renuguntla Rohith · Hyderabad, India · 2025</p>
+</footer>
+
+<!-- MODAL 1: Metro Project -->
+<div class="modal-overlay" id="modal1" onclick="closeModalIfOutside(event,'modal1')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal1')">✕</button>
+    <span class="project-badge badge-blue" style="margin-bottom:1rem">🤖 ML + Graph Theory · Solo Research Project</span>
+    <h2 style="font-family:var(--serif);font-size:1.65rem;margin-bottom:0.5rem;color:var(--ink);line-height:1.2">Hybrid Graph-Theoretic &amp; ML Framework for Hyderabad Metro Route Optimization &amp; Fare Prediction</h2>
+
+    <div class="modal-section">
+      <h4>Problem Statement</h4>
+      <p>Hyderabad Metro Rail connects 57 stations across 3 corridors, but commuters often can't identify the most efficient route or accurately predict their fare before travelling. There was no unified, intelligent tool that combined optimal pathfinding with dynamic fare prediction. I set out to build one — from scratch, solo.</p>
+    </div>
+
+    <div class="modal-section">
+      <h4>Approach</h4>
+      <ol class="modal-steps">
+        <li><span class="step-num">1</span>Modelled the entire Hyderabad Metro network as a weighted graph using Python and NetworkX — stations as nodes, routes as edges weighted by distance and travel time</li>
+        <li><span class="step-num">2</span>Implemented Dijkstra's Algorithm to compute the shortest and most efficient path between any two stations, handling interchanges and multi-corridor journeys</li>
+        <li><span class="step-num">3</span>Collected and processed metro fare data, engineered features (distance, zones, peak/off-peak, interchange count) and trained a Decision Tree Regressor using Scikit-learn for accurate fare prediction</li>
+        <li><span class="step-num">4</span>Integrated both the graph engine and the ML model into a unified Flask web application — users input source and destination, get back the optimal route AND the predicted fare in one response</li>
+        <li><span class="step-num">5</span>Visualized the network and route highlights using Matplotlib for both analysis and the web interface</li>
+      </ol>
+    </div>
+
+    <div class="modal-section">
+      <h4>Results &amp; Impact</h4>
+      <p>Successfully built a working end-to-end system that correctly optimizes routes across the Hyderabad Metro network using Dijkstra's algorithm and predicts fares using a Decision Tree Regressor — both integrated into a single Flask web application. This project demonstrates the practical power of combining classical DSA with modern ML, and represents one of the few student-built tools applied to a real Indian urban transit system.</p>
+    </div>
+
+    <div class="modal-section">
+      <h4>What Makes This Stand Out</h4>
+      <p>Most ML projects at this level use standard datasets and train a model. This project required modelling a real-world city infrastructure as a graph, implementing a pathfinding algorithm from scratch, training a regression model on domain-specific data, and wiring everything together into a deployed web app — all solo.</p>
+    </div>
+
+    <div class="project-tools" style="margin-top:0">
+      <span class="tag blue">Python</span>
+      <span class="tag blue">Scikit-learn</span>
+      <span class="tag teal">NetworkX</span>
+      <span class="tag teal">Dijkstra's Algorithm</span>
+      <span class="tag">Decision Tree Regressor</span>
+      <span class="tag">Flask</span>
+      <span class="tag">Matplotlib</span>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL 2: 4Ever -->
+<div class="modal-overlay" id="modal2" onclick="closeModalIfOutside(event,'modal2')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal2')">✕</button>
+    <span class="project-badge badge-teal" style="margin-bottom:1rem">🌐 Web App · Front-End Development</span>
+    <h2 style="font-family:var(--serif);font-size:1.65rem;margin-bottom:0.5rem;color:var(--ink)">4Ever — Relationship Planning &amp; Budget Tracker</h2>
+
+    <div class="modal-section">
+      <h4>Problem Statement</h4>
+      <p>Couples often juggle shared finances, date planning and day-to-day scheduling across multiple apps or not at all. The idea behind 4Ever was simple: build a single, focused web app designed specifically for two people — where they can track their shared budget, plan their days together and manage their relationship in one place.</p>
+    </div>
+
+    <div class="modal-section">
+      <h4>Approach</h4>
+      <ol class="modal-steps">
+        <li><span class="step-num">1</span>Defined the core feature set: shared budget tracker, day-to-day scheduler, and relationship milestone planning — keeping scope focused and user-centred</li>
+        <li><span class="step-num">2</span>Designed a clean, warm UI using HTML and CSS — intuitive enough for non-technical users, visually distinct from generic productivity apps</li>
+        <li><span class="step-num">3</span>Built interactive features in vanilla JavaScript — budget calculations, schedule entries, persistent local state using browser storage</li>
+        <li><span class="step-num">4</span>Ensured the app was fully responsive for mobile use, since most couples would access it from their phones</li>
+      </ol>
+    </div>
+
+    <div class="modal-section">
+      <h4>Results &amp; Impact</h4>
+      <p>A fully working, deployed front-end web application with budget planning, day scheduling and relationship features built entirely in HTML, CSS and JavaScript. This project demonstrates UI/UX thinking, front-end development skills and the ability to scope, design and ship a complete product independently.</p>
+    </div>
+
+    <div class="modal-section">
+      <h4>What I Learned</h4>
+      <p>Building for a human need (not just a technical challenge) forced me to think about user experience first. This project sharpened my HTML/CSS skills, my JavaScript DOM manipulation and my ability to design something that feels genuinely usable — not just functional.</p>
+    </div>
+
+    <div class="project-tools" style="margin-top:0">
+      <span class="tag teal">HTML5</span>
+      <span class="tag teal">CSS3</span>
+      <span class="tag">JavaScript (Vanilla)</span>
+      <span class="tag">Responsive Design</span>
+      <span class="tag">Browser Local Storage</span>
+      <span class="tag">UI/UX Design</span>
+    </div>
+  </div>
+</div>
+
+<script>
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
+});
+
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+function openModal(id) {
+  document.getElementById(id).classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(id) {
+  document.getElementById(id).classList.remove('open');
+  document.body.style.overflow = '';
+}
+function closeModalIfOutside(e, id) {
+  if(e.target === document.getElementById(id)) closeModal(id);
+}
+document.addEventListener('keydown', e => {
+  if(e.key === 'Escape') {
+    document.querySelectorAll('.modal-overlay.open').forEach(m => closeModal(m.id));
+  }
+});
+
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('.submit-btn');
+  btn.textContent = '✓ Message Sent!';
+  btn.style.background = '#0d9e78';
+  setTimeout(() => {
+    btn.innerHTML = 'Send Message <span>→</span>';
+    btn.style.background = '';
+    e.target.reset();
+  }, 3000);
+}
+</script>
+</body>
+</html>
